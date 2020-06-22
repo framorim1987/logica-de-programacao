@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>funções</title>
+</head>
+
+<body>
+
+    <script>
+        var ano = 2020;
+        var idadeFelipe = (ano - 1987);
+        var idadeLuiz = (ano - 1975);
+        var idadeLaura = (ano - 1998);
+        var soma = idadeFelipe + idadeLuiz + idadeLaura;
+        var media = Math.round(soma / 3);
+
+        function pularLinha() {
+            document.write("<br>");
+        }
+
+        function mostra(mensagem) {
+            document.write(mensagem);
+        }
+
+        mostra("Felipe tem " + idadeFelipe + "anos.");
+        pularLinha();
+        mostra("Luiz tem " + idadeLuiz + "anos.");
+        pularLinha();
+        mostra("Laura tem " + idadeLaura + "anos.");
+        pularLinha();
+        mostra("A media das idades é " + Math.round(media));
+    </script>
+
+</body>
+
+</html>

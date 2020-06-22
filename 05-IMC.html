@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+
+<body>
+
+    <script>
+        //Variáveis
+        var imcFelipe = calculaIMC(1.80, 80);
+        var imcAmigo = calculaIMC(1.75, 70);
+
+        //Funções
+        function pularLinha() {
+            document.write("<br>");
+        }
+
+        function mostra(mensagem) {
+            document.write(mensagem);
+            pularLinha()
+        }
+
+        function calculaIMC(altura, peso) {
+            imc = peso / (altura * altura);
+            return imc;
+        }
+
+        mostra(`O IMC do Felipe é ${Math.round(imcFelipe)}.`);
+        mostra(`O IMC do Amigo é ${Math.round(imcAmigo)}.`);
+        mostra(`A média dos IMC's é ${Math.round((imcFelipe +imcAmigo)/2)}.`);
+    </script>
+
+</body>
+
+</html>

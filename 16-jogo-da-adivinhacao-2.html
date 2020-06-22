@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da adivinhação</title>
+</head>
+
+<body>
+    <input type="number" min="0" max="10">
+    <button>Testar segredo</button>
+
+    <script>
+        var input = document.querySelector('input');
+        var button = document.querySelector('button');
+
+        function aleatorio() {
+            return Math.round(Math.random() * 10);
+        }
+
+        function sorteiaNumeros(quantidade){
+            var segredos = [];
+            var numero = 1;
+
+            while (numero <= quantidade) {
+                var numAleatorio = aleatorio();
+                var achou = false;
+
+                for (var posicao = 0; posicao < segredos.length; posicao++) {
+                    if (segredos[posicao] == numAleatorio) {
+                        achou = true;
+                        break;
+                    }
+                }
+
+                if (achou == false) {
+                    segredos.push(numAleatorio);
+                    numero++;
+                }
+            }
+
+            return segredos;
+        }
+
+        var segredos = sorteiaNumeros(3);
+
+        console.log(segredos);
+
+        function verifica() {
+            var achou = false;
+
+            for (var posicao = 0; posicao < segredos.length; posicao++) {
+                if (input.value == segredos[posicao]) {
+                    alert('Você acertou!');
+                    achou = true;
+                    break;
+                }
+            }
+
+            if (!achou) {
+                alert('Você errou!');
+            }
+
+            input.value = "";
+            input.focus();
+        }
+
+        button.onclick = verifica;
+    </script>
+
+</body>
+
+</html>

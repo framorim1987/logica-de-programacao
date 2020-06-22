@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média de idades</title>
+</head>
+
+<body>
+
+    <script>
+        function pularLinha() {
+            document.write("<br>");
+        }
+
+        function mostra(mensagem) {
+            document.write(mensagem);
+            pularLinha();
+        }
+
+        let pessoas = Number(prompt('Entre com o número de pessoas na família:'));
+        let total = 0;
+
+        for (familiares = 1; familiares <= pessoas; familiares++) {
+            let idade = Number(prompt(`Informa a idade do ${familiares}º familiar:`));
+            total += idade;
+        }
+
+        mostra(`A média das idades é ${total/pessoas}.`)
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>break</title>
+</head>
+
+<body>
+
+    <script>
+        function pularLinha() {
+            document.write("<br>");
+        }
+
+        function mostra(mensagem) {
+            document.write(mensagem);
+            pularLinha()
+        }
+
+        var numeroPensado = 3//Math.round(Math.random() * 10);
+        var tentativa = 1;
+
+        while (tentativa <= 3){
+
+            var palpite = Number(prompt('Digite o seu palpite:'));
+
+            if (palpite == numeroPensado) {5
+                mostra(`Você acertou! O número pensado era ${numeroPensado}`);
+                break;
+            } else {
+                mostra('Você errou!')
+            }
+
+            tentativa++;
+        }
+
+        mostra('Fim!')
+    </script>
+
+</body>
+
+</html>
